@@ -1,0 +1,24 @@
+# The oracle's pinned environment (plan/design/indicators/PORTING.md § The oracle).
+# Install into a venv OUTSIDE the repo, wheels only:
+#   py -3.12 -m venv "%LOCALAPPDATA%\algolift\indicator-oracle-venv"
+#   <venv>\Scripts\python.exe -I -m pip install --only-binary=:all: -r scripts/indicators/oracle/requirements.txt
+# generate.py refuses to run when an installed version differs from a pin here,
+# so every fixture records exactly these versions. Change a pin only with a
+# regeneration of every fixture and a note in PORTING.md § Versions.
+#
+# ta-lib 0.8.1 (PyPI 2026-09-21) bundles the TA-Lib C library 0.8.1 in its
+# wheel. 0.8.2 (2026-10-12) was skipped as a day old when this was pinned.
+# pandas-ta 0.4.71b0 is the only copy left of that package (its GitHub repo is
+# gone); it pins numba 0.61.2, which caps numpy below 2.3, so numpy is 2.2.6.
+ta-lib==0.8.1
+pandas-ta-classic==0.8.32
+pandas-ta==0.4.71b0
+numpy==2.2.6
+pandas==3.0.6
+numba==0.61.2
+llvmlite==0.44.0
+python-dateutil==2.9.0.post0
+six==1.17.0
+tzdata==2026.5
+tqdm==4.70.1
+colorama==0.4.6

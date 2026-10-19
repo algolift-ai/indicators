@@ -1,0 +1,61 @@
+{
+  "name": "@algolift/indicators",
+  "version": "0.1.0",
+  "description": "Technical indicators in TypeScript: SMA, EMA, RSI, MACD, Bollinger Bands, ATR and 200 more, each tested against TA-Lib, pandas-ta-classic or pandas-ta, with the oracle fixtures in the repo.",
+  "keywords": [
+    "technical-analysis",
+    "indicators",
+    "trading",
+    "ta-lib",
+    "pandas-ta",
+    "candlestick-patterns",
+    "moving-average",
+    "typescript"
+  ],
+  "homepage": "https://github.com/algolift-ai/indicators#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algolift-ai/indicators.git"
+  },
+  "bugs": {
+    "url": "https://github.com/algolift-ai/indicators/issues"
+  },
+  "license": "MIT",
+  "author": "AlgoLift LLC (https://algolift.ai)",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/cjs/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/esm/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/types/cjs/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "prepublishOnly": "node scripts/test.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.27",
+    "esbuild": "0.28.1",
+    "typescript": "5.9.3"
+  }
+}
